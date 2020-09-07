@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rpi-demo
+  namespace: rpi-demo
+  labels:
+    app: rpi-demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rpi-demo
+  template:
+    metadata:
+      labels:
+        app: rpi-demo
+    spec:
+      containers:
+      - name: hostname
+        image: pistacks/hostname
+        ports:
+        - containerPort: 8000
