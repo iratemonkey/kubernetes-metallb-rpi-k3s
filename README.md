@@ -45,7 +45,7 @@ pod/speaker-njlwc                 1/1     Running   0          3h26m
 
 ### Deploy a Sample Application
 
-First we will deploy the application without the MetalLB Load Balancer:
+First we will deploy the application **without** the MetalLB Load Balancer:
 
 ```
 $ kubectl apply -f example-app/namespace.yml
@@ -78,7 +78,7 @@ $ curl 10.43.74.108
 Hostname: rpi-demo-6b48b95d9d-sk7p5
 ```
 
-But we cant view this outside the cluster. Lets change the service so that it uses the LoadBalancer type:
+But we cant view this outside the cluster. Lets change the service so that it uses the LoadBalancer type, and deploy the service **with** the MetalLB LoadBalancer service:
 
 ```
 $ kubectl apply -f example-app/service-with-metallb.yml
